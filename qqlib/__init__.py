@@ -128,10 +128,10 @@ class QQ:
 		tmp = tempfile.mkstemp(suffix = '.jpg')
 		os.write(tmp[0], r.content)
 		os.close(tmp[0])
-		# os.startfile(tmp[1])
+		os.startfile(tmp[1])
 		priint(tmp[1])
-		opener ="open" if sys.platform == "darwin" else "xdg-open"
-		subprocess.call([opener, tmp[1]])
+		#opener ="open" if sys.platform == "darwin" else "xdg-open"
+		#subprocess.call([opener, tmp[1]])
 		vcode = input('Verify code: ')
 		os.remove(tmp[1])
 		return vcode
