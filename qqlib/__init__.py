@@ -5,8 +5,7 @@ QQ Login module
 Maintainer: Gerald <gera2ld@163.com>
 Last change: 2015 Apr 20
 '''
-import subprocess, sys
-import os, hashlib, re, tempfile, binascii, base64
+import os, sys, subprocess, hashlib, re, tempfile, binascii, base64
 import rsa, requests
 from . import tea
 __all__ = ['QQ', 'LogInError']
@@ -130,6 +129,7 @@ class QQ:
 		os.write(tmp[0], r.content)
 		os.close(tmp[0])
 		# os.startfile(tmp[1])
+		priint(tmp[1])
 		opener ="open" if sys.platform == "darwin" else "xdg-open"
 		subprocess.call([opener, tmp[1]])
 		vcode = input('Verify code: ')
